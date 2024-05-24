@@ -12,11 +12,20 @@
 <input type="number" id="startCoins">
 <button onclick="startGame()">Start Game</button>
 
+<div id="coinStack"></div>
+
 <script>
 function startGame() {
-    var ncoin = parseInt(document.getElementById("startCoins").value);
-    console.log("nim moves first");
-    nimMoves(ncoin);
+    try {
+        var ncoin = parseInt(document.getElementById("startCoins").value);
+        if (isNaN(ncoin)) {
+            throw "Input is not a number";
+        }
+        console.log("nim moves first");
+        nimMoves(ncoin);
+    } catch (error) {
+        alert("Please enter a valid numeric value.");
+    }
 }
 
 function askForMove(num) {
@@ -55,14 +64,14 @@ function nimMoves(num) {
         return;
     }
     console.log("The following is the stack of coins after " + choice + " coin(s) were removed");
-    var stack = "";
+    var stack = document.getElementById("coinStack");
+    stack.innerHTML = "";
     for (var i = 0; i < num; i++) {
         if (i === 0) {
-            stack += "_____\n";
+            stack.innerHTML += "_____<br>";
         }
-        stack += "|____|\n";
+        stack.innerHTML += "|____|<br>";
     }
-    console.log(stack);
     askForMove(num);
 }
 </script>
