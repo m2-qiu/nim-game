@@ -23,6 +23,7 @@
         .nim-button.disabled {
             background-color: white;
             cursor: not-allowed;
+            color: white;
         }
         #gameContainer {
             display: none;
@@ -77,7 +78,7 @@
             const removeCount = position + 1;
             disableButtons(index, removeCount);
             if (checkGameOver('user')) return;
-            setTimeout(aiMove, 500);
+            setTimeout(aiMove, 1000);
         }
 
         function disableButtons(startIndex, count) {
