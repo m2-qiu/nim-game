@@ -36,7 +36,7 @@
     <h1>Nim Game</h1>
     <p>Welcome to NIM! In this game, you can enter the number of stones to start, and each time you and NIM can remove 1, 3, or 4 stones (given there are at least that many stones left). Nim will move first and the one to remove the last stone wins. </p>
     <form id="startForm">
-        <label for="numButtons">Enter the number of buttons: </label>
+        <label for="numButtons">Enter the number of stones: </label>
         <input type="number" id="numButtons" name="numButtons" min="1" required>
         <button type="submit">Start Game</button>
     </form>
@@ -115,7 +115,7 @@
                 if (lastMover === 'user') {
                     alert('CONGRATULATIONS! YOU BEAT THE COMPUTER');
                 } else {
-                    alert('THE LAST STONE IS REMOVED! THE AI WINS! BWA-HA-HA-HA-HA!');
+                    alert('THE LAST STONE IS REMOVED! NIM WINS! BWA-HA-HA-HA-HA!');
                 }
                 return true;
             }
